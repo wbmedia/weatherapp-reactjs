@@ -1,0 +1,24 @@
+/*
+    Author: Antonio Nicasio
+    Author URI: http://frameworkbox.com
+*/
+.weatherDataCont {
+    background-color: #999999;
+    width: 400px;
+    height: 100px;
+    line-height: 100px;
+}
+
+.weatherExtraInfo {
+    background-color: #444444;
+    width: 40%;
+    display: inline-block;
+    color: #eeeeee;
+}
+
+.weatherContTemperature {
+    background-color: #222222;
+    width: 60%;
+    display: inline-block;
+    color: #eeeeee;
+}
