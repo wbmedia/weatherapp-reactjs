@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 export const CLOUD = "cloud";
 
 export const CLOUDY = "Cloudy";
