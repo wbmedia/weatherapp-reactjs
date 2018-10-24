@@ -5,7 +5,6 @@ import WheaterData from './WeatherData/index';
 import Location from './Location';
 import transformWeather from './../../services/trasnfromWeather'
 import getUrlByCity from './../../services/getUrlWeatherByCity';
-
 class WheatherLocation extends Component {
 
    constructor(props) {
@@ -19,46 +18,25 @@ class WheatherLocation extends Component {
    } 
 
    componentDidMount() {
-        this.handleUpdateClick()
+        this.handleUpdateClick();
    }
    
    componentDidUpdate(prevProps, prevState) {
 
    }
-   // depreced NOT USE
-   componentWillMount() {
-   }
-   // depreced NOT USE
-   componentWillUpdate(nextProps, nextState) {
-   }
- 
-// TEST END POINT   
-//    getEndpoint = () => {
-//        fetch(url).then(res => {
-//            return res.json()})
-//            .then( data2 => {
-//              const newData2 = data2;
-//              console.log(newData2)
-//            })
-//             .catch(error => {
-//             console.log(error);
-//             });
-//    }
-
    handleUpdateClick = () => {
-        const api_weather = getUrlByCity(this.state.city)
-         fetch(api_weather).then(response => { 
-             
-             return response.json() })
-            .then(data => {
-            const newWeather = transformWeather(data)
-            this.setState({
-                data: newWeather
-            });
-            })
-            .catch(error => {
-                
-            });
+          const api_weather = getUrlByCity(this.state.city)
+
+        // const api_weather = 'http://api.openweathermap.org/data/2.5/weather?q=Tijuana,mx&appid=846a03df58ef0408069c70fd489be016';
+         fetch(api_weather).then(response => {
+             return response.json()
+         }).then(data => {
+             const newWeather = transformWeather(data)
+             this.setState({
+                 data:newWeather
+             });
+         })
+            
    }
     
    render () {

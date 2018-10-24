@@ -1,4 +1,4 @@
-import convert from 'convert-unit'; 
+import convert from 'convert-units'; 
 import {
     SUN,
     THUNDER,
@@ -9,14 +9,11 @@ import {
 } from './../constants/weathers';
 
 
-const getTemp = kelvin => {
+ const getTemp = kelvin => {
     return Number(convert(kelvin).from("K").to("C").toFixed(2));
 }
-
 const getWeatherState = weather => {
-    const { id } = weather;
-
-    
+    const { id } = weather;    
     if(id < 300) {
         return THUNDER;
     }else if(id < 400){
@@ -32,8 +29,8 @@ const getWeatherState = weather => {
 }
 
 const transformWeather = weather_data => {
-    const { humidity, temp } = weather_data.data.main;
-    const { speed } = weather_data.data.wind;
+    const { humidity, temp } = weather_data.main;
+    const { speed } = weather_data.wind;
     const weatherState = getWeatherState(weather_data.weather[0]);
     const temperature = getTemp(temp);
 
