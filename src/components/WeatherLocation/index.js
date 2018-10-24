@@ -26,8 +26,6 @@ class WheatherLocation extends Component {
    }
    handleUpdateClick = () => {
           const api_weather = getUrlByCity(this.state.city)
-
-        // const api_weather = 'http://api.openweathermap.org/data/2.5/weather?q=Tijuana,mx&appid=846a03df58ef0408069c70fd489be016';
          fetch(api_weather).then(response => {
              return response.json()
          }).then(data => {
@@ -39,10 +37,12 @@ class WheatherLocation extends Component {
             
    }
     
+
    render () {
+       const {onWeatherLocationClick} = this.props;
        const { city, data} = this.state;
        return(
-        <div>
+        <div className={'weatherLocationCont'} onClick={onWeatherLocationClick}>
             <Location city={city}></Location>   
             {data ? 
                 <WheaterData data={data}></WheaterData> : 
@@ -55,6 +55,9 @@ class WheatherLocation extends Component {
 }
 WheatherLocation.propTypes = {
     city: PropTypes.string.isRequired,
+    onWatherLocationClick: PropTypes.func,
 }
+
+
 
 export default WheatherLocation;

@@ -4,8 +4,6 @@
 */
 .weatherDataCont {
     background-color: #999999;
-    width: 400px;
-    height: 100px;
     line-height: 100px;
 }
 
@@ -23,3 +21,7 @@
     color: #eeeeee;
 }
 
+.weatherLocationCont {
+    display: inline-block;
+    background-color: blue;
+}

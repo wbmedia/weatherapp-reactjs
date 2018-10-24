@@ -10,11 +10,16 @@ const cities = [
   'Ensenada,mx',
 ]
 class App extends Component {
+  handleSelectedLocation = city => {
+    console.log('handleSelectLocation');
+  }
   render() {
     return (
+
       <div className="App">
          <h1>Weather App | Baja California</h1>
-         <LocationList cities={cities}></LocationList>
+         <LocationList cities={cities}
+         onSelectedLocation={this.handleSelectedLocation}></LocationList>
       </div>
     );
   }
