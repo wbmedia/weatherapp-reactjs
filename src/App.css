@@ -28,6 +28,12 @@ body, html {
   color: #1e272e;   
 }
 
+.footer {
+  background-color: #f7f1e3;
+  color: #1e272e;
+  padding: 20px;   
+}
+
 .App-link {
   color: #61dafb;
 }

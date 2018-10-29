@@ -3,6 +3,7 @@ import LocationList from './components/LocationList'
 import ForecastExtended from './components/ForecastExtender'
 import './App.css';
 import Navigation from './UI/layout/topNavBar'
+import Footer from './UI/layout/footer'
 
 const cities = [
   'Tijuana,mx',
@@ -47,6 +48,7 @@ class App extends Component {
         </div>  
        </div>
       </div>
+       <Footer />
       </div>
     );
   }
