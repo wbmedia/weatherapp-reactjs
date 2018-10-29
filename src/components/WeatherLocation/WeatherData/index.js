@@ -6,7 +6,7 @@ import './styles.css';
  
 const WheaterData = ({ data: { temperature, weatherState, humidity, wind } }) => {
    return (
-        <div className="weatherDataCont">
+        <div className="">
             <WheaterTemperature 
             temperature={temperature} 
             weatherState={weatherState} />

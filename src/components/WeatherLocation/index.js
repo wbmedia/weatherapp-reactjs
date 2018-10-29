@@ -42,13 +42,15 @@ class WheatherLocation extends Component {
        const {onWeatherLocationClick} = this.props;
        const { city, data} = this.state;
        return(
-        <div className={'weatherLocationCont'} onClick={onWeatherLocationClick}>
-            <Location city={city}></Location>   
-            {data ? 
-                <WheaterData data={data}></WheaterData> : 
-                <CircularProgress />
-            }
-        </div>
+           <div className="row">
+            <div className="col-md-12 box mt-5 mb-5" onClick={onWeatherLocationClick}>
+                <Location city={city}></Location>   
+                {data ? 
+                    <WheaterData data={data}></WheaterData> : 
+                    <CircularProgress />
+                }
+            </div>
+           </div>
        )
    }
 
