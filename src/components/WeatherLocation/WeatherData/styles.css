@@ -4,11 +4,14 @@
 */
 
 .box {
-    background-color: #eeeeee;
-    border-radius: 8px;
-    box-shadow: 2px 2px 1px #dddddd;
+    background-color: none;
 }
 
 .scroll{
     overflow:scroll;
+}
+
+.background-flourecent-red {
+ background-color: #f7f1e3!important;
+ color: #1e272e!important;   
 }

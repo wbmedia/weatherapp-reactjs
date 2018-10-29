@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LocationList from './components/LocationList'
 import ForecastExtended from './components/ForecastExtender'
 import './App.css';
+import Navigation from './UI/layout/topNavBar'
 
 const cities = [
   'Tijuana,mx',
@@ -23,11 +24,12 @@ class App extends Component {
   render() {
     const { city } = this.state;
     return (
-
-      <div className="container">
+      <div>
+        <Navigation />
+      <div className="container mt-5 mb-5">
        <div className="row">
          <div className="col-md-8">
-            <div className="card">
+            <div className="card background-flourecent-red">
               <div className="card-body text-center scroll">
               <h1>Weather App | Baja California</h1>
                 <LocationList  cities={cities}
@@ -36,7 +38,7 @@ class App extends Component {
             </div>
         </div>  
 
-        <div className="col-md-4">
+        <div className="col-md-4 text-center">
           {
             !city ?
             <h3>No City Selected</h3>:
@@ -44,6 +46,7 @@ class App extends Component {
           }
         </div>  
        </div>
+      </div>
       </div>
     );
   }
