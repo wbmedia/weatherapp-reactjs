@@ -41,9 +41,14 @@ class ForecastExtended extends Component {
         .catch()
     }
 
-    renderCastItemDays() {
-       return <h1>Render Items </h1>
-        // return days.map(day => (<ForecastItem weekDay={day} hour={10} data={data} />))
+    renderCastItemDays(forecastData) {
+         return forecastData.map(forecast => (
+            <ForecastItem 
+            key={`${forecast.weekDay}${forecast.hour}`}
+            weekDay={forecast.weekDay} 
+            hour={forecast.hour} 
+            data={forecast.data}>
+            </ForecastItem>));
     }
 
     renderProgers(){
@@ -57,7 +62,7 @@ class ForecastExtended extends Component {
         <div className="card background-flourecent-red">
             <div className="card-body">
                 <div>Forecast Extended for {city}</div>
-                {forecastData ? this.renderCastItemDays() :
+                {forecastData ? this.renderCastItemDays(forecastData) :
                 this.renderProgers()
             }
             </div>

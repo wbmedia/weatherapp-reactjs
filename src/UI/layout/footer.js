@@ -5,13 +5,12 @@ class Footer extends Component {
         return (
             <div className="footer">
                 <div className="text-center">
-                    <span> &copy; 2018 Weather React Application | development By: 
-                    <a href="http://frameworkbox.com"> Antonio Nicasio</a>    
+                    <span> &copy; <strong>2018</strong>    Weather React Application | development By: 
+                        <a href="http://frameworkbox.com"> Antonio Nicasio</a>    
                     </span>    
                 </div>
             </div>
         )
     }
 }
-
 export default Footer;
