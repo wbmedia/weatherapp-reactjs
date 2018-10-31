@@ -5,22 +5,6 @@ import ForecastItem from './ForecastItem/index'
 import {extends_url_weather, api_key} from './../constants/api_url'
 import trasnformForecast from './../services/transformForecast'
 
-// const days = [
-//     'Lunes',
-//     'Martes',
-//     'Mircoles',
-//     'Jueves',
-//     'Viernes',
-// ]
-
-// const data = {
-//     temperature: 10,
-//     weatherState: 'normal',
-//     humidity: 10,
-//     wind: 'normal'
-
-// }
-
 class ForecastExtended extends Component {
     
     constructor() {
@@ -29,6 +13,17 @@ class ForecastExtended extends Component {
     }
 
     componentDidMount() {
+        this.updateCity(this.updateCity.city)
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.city !== this.props.city){
+            this.setState({forecastData: null})
+            this.updateCity(nextProps.city)
+        }
+    }
+
+    updateCity = city => {
         const url_forecast_extended = `${extends_url_weather}?q=${this.props.city}&appid=${api_key}`
          fetch(url_forecast_extended)
         .then(data => data.json())
@@ -38,9 +33,11 @@ class ForecastExtended extends Component {
                 this.setState({ forecastData });
             }
         )
-        .catch()
+        .catch(error => {
+           
+            
+        })
     }
-
     renderCastItemDays(forecastData) {
          return forecastData.map(forecast => (
             <ForecastItem 
