@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 export const CLOUD = "cloud";
 
 export const CLOUDY = "Cloudy";
@@ -11,3 +12,7 @@ export const SNOW = "snow";
 export const WINDY = "wind";
 
 export const FOGGY = "day-fog";
+
+export const THUNDER = 'thunder';
+
+export const DRIZZLE = "drizzle";
